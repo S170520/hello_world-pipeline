@@ -1,0 +1,12 @@
+name: Deploy Hello World Python App
+on:  push:
+    branches:      - main
+jobs:
+  build:    runs-on: ubuntu-latest
+        steps:
+    - name: Checkout repository      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2      with:
+        python-version: '3.x'
+    - name: Run Hello World
+      run: python app.py
